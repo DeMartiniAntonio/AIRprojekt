@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Veronika\\Desktop\\Vending machine Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj": {}
+    "C:\\Users\\Veronika\\Desktop\\AIR projekt Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Veronika\\Desktop\\Vending machine Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj": {
+    "C:\\Users\\Veronika\\Desktop\\AIR projekt Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Veronika\\Desktop\\Vending machine Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Veronika\\Desktop\\AIR projekt Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj",
         "projectName": "VendingMachineAPI",
-        "projectPath": "C:\\Users\\Veronika\\Desktop\\Vending machine Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj",
+        "projectPath": "C:\\Users\\Veronika\\Desktop\\AIR projekt Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj",
         "packagesPath": "C:\\Users\\Veronika\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Veronika\\Desktop\\Vending machine Backend\\VendingMachineAPI\\VendingMachineAPI\\obj\\",
+        "outputPath": "C:\\Users\\Veronika\\Desktop\\AIR projekt Backend\\VendingMachineAPI\\VendingMachineAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Veronika\\AppData\\Roaming\\NuGet\\NuGet.Config",

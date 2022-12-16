@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ow3QE4M6PoxwmHy576gZx0XZYWn7x7kDSFv2sJW0ItXSzEqnHBqIa6o0Ah/9HaylvOtmGgwtfcRhkui1XfRD/A==",
+  "dgSpecHash": "ePBjN58QDm9x/UzeZMfi6quimJegoSKvVO0vNgBtYMsBTyNGnZdGY7kYk0kVgZ8xW01aQhMeOLactSvMEvaSPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Veronika\\Desktop\\Vending machine Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj",
+  "projectFilePath": "C:\\Users\\Veronika\\Desktop\\AIR projekt Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Veronika\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Veronika\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
