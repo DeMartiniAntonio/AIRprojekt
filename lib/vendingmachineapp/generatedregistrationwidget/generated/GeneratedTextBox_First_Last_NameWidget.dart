@@ -28,19 +28,6 @@ class GeneratedTextBox_First_Last_NameWidget extends StatelessWidget {
               height: 62.53499984741211,
               child: GeneratedRectangle42Widget(),
             ),
-            Positioned(
-              left: 35.0,
-              top: null,
-              right: 77.0,
-              bottom: null,
-              width: null,
-              height: 28.0,
-              child: TransformHelper.translate(
-                  x: 0.00,
-                  y: 0.73,
-                  z: 0,
-                  child: GeneratedFirstandlastnameWidget()),
-            )
           ]),
     );
   }

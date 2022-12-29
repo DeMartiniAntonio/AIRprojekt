@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/GeneratedGroup48Widget.dart';
+import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/GeneratedRectangle43Widget.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/GeneratedEmailadressWidget.dart';
 
@@ -26,18 +26,8 @@ class GeneratedTextBox_EmailWidget extends StatelessWidget {
               bottom: null,
               width: null,
               height: 62.53499984741211,
-              child: GeneratedGroup48Widget(),
+              child: GeneratedRectangle43Widget(),
             ),
-            Positioned(
-              left: 36.0,
-              top: null,
-              right: 146.0,
-              bottom: null,
-              width: null,
-              height: 28.0,
-              child: TransformHelper.translate(
-                  x: 0.00, y: 0.73, z: 0, child: GeneratedEmailadressWidget()),
-            )
           ]),
     );
   }

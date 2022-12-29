@@ -28,16 +28,6 @@ class GeneratedTextbox_UsernameWidget extends StatelessWidget {
               height: 69.84783172607422,
               child: GeneratedTextbox_UsernameWidget1(),
             ),
-            Positioned(
-              left: 24.0,
-              top: null,
-              right: 149.70556640625,
-              bottom: null,
-              width: null,
-              height: 35.0,
-              child: TransformHelper.translate(
-                  x: 0.00, y: 2.58, z: 0, child: GeneratedUsernameWidget()),
-            )
           ]),
     );
   }

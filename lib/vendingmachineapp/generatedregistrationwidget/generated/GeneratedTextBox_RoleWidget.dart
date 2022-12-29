@@ -28,16 +28,6 @@ class GeneratedTextBox_RoleWidget extends StatelessWidget {
               height: 62.53499984741211,
               child: GeneratedRectangle43Widget3(),
             ),
-            Positioned(
-              left: 26.0,
-              top: null,
-              right: 252.0,
-              bottom: null,
-              width: null,
-              height: 31.0,
-              child: TransformHelper.translate(
-                  x: 0.00, y: 2.23, z: 0, child: GeneratedRoleWidget()),
-            )
           ]),
     );
   }

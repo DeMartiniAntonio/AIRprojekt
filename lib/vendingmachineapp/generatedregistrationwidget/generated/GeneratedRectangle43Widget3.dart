@@ -23,9 +23,29 @@ class GeneratedRectangle43Widget3 extends StatelessWidget {
               ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(36.51735305786133),
+        borderRadius: BorderRadius.circular(36.54999923706055),
         child: Container(
           color: Color.fromARGB(255, 167, 167, 167),
+          alignment: Alignment.centerLeft,
+          padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+          child: TextField(
+            style: TextStyle(
+              fontSize: 24,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w700,
+            ),
+
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: 'Role',
+              hintStyle: TextStyle(
+                fontSize: 24,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+                color: Color.fromARGB(255, 110, 110, 110),
+              ),
+            ),
+          ),
         ),
       ),
     );
