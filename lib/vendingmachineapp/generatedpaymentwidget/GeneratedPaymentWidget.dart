@@ -14,10 +14,10 @@ class GeneratedPaymentWidget extends StatelessWidget {
     return Material(
         child: ClipRRect(
       borderRadius: BorderRadius.zero,
-      child: Container(
+          child: Container(
         width: 390.0,
         height: 844.0,
-        child: Stack(
+            child: Stack(
             fit: StackFit.expand,
             alignment: Alignment.center,
             children: [

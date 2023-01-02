@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedLogoWidget1.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedButton_Facebook_SignInWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedButton_SignInWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedFooterWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedTextbox_PasswordWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedTextbox_UsernameWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedButton_Google_SignInWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/GeneratedLabel_Forgot_your_passwordWidget.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/Logo.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/ButtonFacebookSignIn.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/ButtonSignIn.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/ButtonCreateAnAccount.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/TextboxPasswordLogin.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/TextboxUsernameLogin.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/ButtonGoogleSignIn.dart';
+import 'package:flutterapp/vendingmachineapp/generatedloginwidget/generated/ForgotYourPassword.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 
 /* Frame Login
@@ -40,7 +40,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                 width: 82.21957397460938,
                 height: 73.0456771850586,
                 child: TransformHelper.translate(
-                    x: 1.11, y: -343.48, z: 0, child: GeneratedLogoWidget1()),
+                    x: 1.11, y: -343.48, z: 0, child: Logo()),
               ),
               Positioned(
                 left: 39.0,
@@ -53,7 +53,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     x: 0.00,
                     y: -75.08,
                     z: 0,
-                    child: GeneratedTextbox_PasswordWidget()),
+                    child: TextboxPasswordLogin()),
               ),
               Positioned(
                 left: 41.0,
@@ -66,7 +66,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     x: 0.00,
                     y: -175.08,
                     z: 0,
-                    child: GeneratedTextbox_UsernameWidget()),
+                    child: TextboxUsernameLogin()),
               ),
               Positioned(
                 left: null,
@@ -79,7 +79,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     x: 0.72,
                     y: 0.00,
                     z: 0,
-                    child: GeneratedLabel_Forgot_your_passwordWidget()),
+                    child: ForgotYourPassword()),
               ),
               Positioned(
                 left: 39.0,
@@ -92,7 +92,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     x: 0.00,
                     y: 39.58,
                     z: 0,
-                    child: GeneratedButton_SignInWidget()),
+                    child: ButtonSignIn()),
               ),
               Positioned(
                 left: null,
@@ -105,7 +105,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     x: 6.00,
                     y: 208.00,
                     z: 0,
-                    child: GeneratedButton_Google_SignInWidget()),
+                    child: ButtonGoogleSignIn()),
               ),
               Positioned(
                 left: null,
@@ -118,7 +118,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     x: 1.50,
                     y: 294.50,
                     z: 0,
-                    child: GeneratedButton_Facebook_SignInWidget()),
+                    child: ButtonFacebookSignIn()),
               ),
               Positioned(
                 left: 0.0,
@@ -127,7 +127,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                 bottom: 0.15000152587890625,
                 width: null,
                 height: 51.849998474121094,
-                child: GeneratedFooterWidget(),
+                child: ButtonCreateAnAccount(),
               )
             ]),
       ),
