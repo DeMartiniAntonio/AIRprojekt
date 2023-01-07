@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ePBjN58QDm9x/UzeZMfi6quimJegoSKvVO0vNgBtYMsBTyNGnZdGY7kYk0kVgZ8xW01aQhMeOLactSvMEvaSPw==",
+  "dgSpecHash": "SZPJCi9FlEDRQ2q7uUXZAzinIpdbpbdnk2iCMq6s2E3Tm2JwcZLn7r0JOwsc7a8NbkG1HdwTl0zCI1mYM2F2BA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Veronika\\Desktop\\AIR projekt Backend\\VendingMachineAPI\\VendingMachineAPI\\VendingMachineAPI.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,7 @@
     "C:\\Users\\Veronika\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Veronika\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Veronika\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\Veronika\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\Veronika\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Veronika\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Veronika\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",

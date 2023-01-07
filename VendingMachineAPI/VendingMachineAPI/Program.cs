@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseInMemoryDatabase("VendingMachineDb"));
+builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseInMemoryDatabase("VendingMachineDb"));
 builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("VendingMachineApp")));
 
 

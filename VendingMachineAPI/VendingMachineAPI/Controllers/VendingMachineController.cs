@@ -16,6 +16,7 @@ namespace VendingMachineAPI.Controllers
             this.dbContext = dbContext;
         }
 
+       
         [HttpGet]
         public async Task<IActionResult> GetAll(string ObjectsType)
         {
@@ -64,7 +65,7 @@ namespace VendingMachineAPI.Controllers
                 return BadRequest();
             }
 
-        }
+        } 
 
         [HttpPost("AddDevice")]
         public async Task<IActionResult> AddDevice(AddDeviceRequest addDeviceRequest)
@@ -120,7 +121,6 @@ namespace VendingMachineAPI.Controllers
                 Email= addUserRequest.Email,
                 Password= addUserRequest.Password,
                 Salt= addUserRequest.Salt,
-                Active= addUserRequest.Active,
                 Role_id= addUserRequest.Role_id
             };
 

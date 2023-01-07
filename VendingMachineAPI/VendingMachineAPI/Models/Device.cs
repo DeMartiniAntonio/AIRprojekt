@@ -10,6 +10,6 @@ namespace VendingMachineAPI.Models
         public decimal Long { get; set; }
         public int Stock { get; set; }
         public decimal Price { get; set; }
-        public string Active { get; set; }
+        public bool Active { get; set; }
     }
 }

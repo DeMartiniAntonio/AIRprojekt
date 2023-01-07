@@ -14,6 +14,8 @@ namespace VendingMachineAPI.Data
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public DbSet<ActionType> Actions { get; set; }
+
 
     }
 }
