@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using VendingMachineAPI.Data;
+using Pomelo.EntityFrameworkCore.MySql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseInMemoryDatabase("VendingMachineDb"));
-builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("VendingMachineApp")));
+//builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseInMemoryDatabase("VendingMachineDb"));
+builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("VendingMachineApp"), ServerVersion.AutoDetect("8.0.22")));
 
 
 var app = builder.Build();

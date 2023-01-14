@@ -174,3 +174,5 @@ C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPII\VendingMachineA
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPII\VendingMachineAPI\obj\Debug\net6.0\VendingMachineAPI.pdb
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPII\VendingMachineAPI\obj\Debug\net6.0\VendingMachineAPI.genruntimeconfig.cache
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPII\VendingMachineAPI\obj\Debug\net6.0\ref\VendingMachineAPI.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

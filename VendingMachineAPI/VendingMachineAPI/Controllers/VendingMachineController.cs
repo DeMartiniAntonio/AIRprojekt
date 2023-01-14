@@ -120,7 +120,6 @@ namespace VendingMachineAPI.Controllers
                 Last_name= addUserRequest.Last_name,
                 Email= addUserRequest.Email,
                 Password= addUserRequest.Password,
-                Salt= addUserRequest.Salt,
                 Role_id= addUserRequest.Role_id
             };
 
