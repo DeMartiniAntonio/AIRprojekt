@@ -22,6 +22,12 @@ builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.Use
 
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<VendingMachineAPIDbContext>();
+    db.Database.Migrate();
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
