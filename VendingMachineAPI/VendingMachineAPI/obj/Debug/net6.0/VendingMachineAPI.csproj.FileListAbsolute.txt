@@ -176,3 +176,16 @@ C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPII\VendingMachineA
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPII\VendingMachineAPI\obj\Debug\net6.0\ref\VendingMachineAPI.dll
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\MySqlConnector.dll
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\FluentAssertions.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\Ubiety.Dns.Core.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\Zstandard.Net.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\MySql.Data.EntityFrameworkCore.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\Renci.SshNet.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\SshNet.Security.Cryptography.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\VendingMachineAPI\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll

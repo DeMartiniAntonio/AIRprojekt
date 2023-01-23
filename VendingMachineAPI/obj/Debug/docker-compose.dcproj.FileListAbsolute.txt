@@ -55,3 +55,4 @@ C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPII\obj\Debug\docke
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\bin\Debug\MySqlConnector.dll
+C:\Users\Veronika\Desktop\AIR projekt Backend\VendingMachineAPI\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
