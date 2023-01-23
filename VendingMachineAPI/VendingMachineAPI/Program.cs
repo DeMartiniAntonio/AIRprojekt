@@ -17,8 +17,9 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseInMemoryDatabase("VendingMachineDb"));
 //builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("VendingMachineApp"), ServerVersion.AutoDetect("8.0.22")));
-//builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseMySql(configuration.GetConnectionString("vendingmachinedb")));
-builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("vendingmachinedb"), ServerVersion.AutoDetect("8.0.22")));
+string neke = builder.Configuration.GetConnectionString("vendingmachinedb");
+builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("vendingmachinedb")));
+//builder.Services.AddDbContext<VendingMachineAPIDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("vendingmachinedb"), ServerVersion.AutoDetect("8.0.22")));
 
 
 var app = builder.Build();
