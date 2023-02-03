@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VendingMachineAPI.Data;
 
@@ -10,9 +11,11 @@ using VendingMachineAPI.Data;
 namespace VendingMachineAPI.Migrations
 {
     [DbContext(typeof(VendingMachineAPIDbContext))]
-    partial class VendingMachineAPIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230203121435_Initial_Migration_2")]
+    partial class InitialMigration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
