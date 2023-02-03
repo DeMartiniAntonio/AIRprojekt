@@ -2,12 +2,11 @@
 
 namespace VendingMachineAPI.Models
 {
-    public class Event
+    public class Login
     {
         [Key]
-        public int Event_ID { get; set; }
+        public int Login_ID { get; set; }
         public int User_id { get; set; }
-        public int Device_id { get; set; }
         public DateTime Date_time { get; set; }
     }
 }

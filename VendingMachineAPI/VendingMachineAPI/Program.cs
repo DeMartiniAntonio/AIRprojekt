@@ -5,6 +5,8 @@ using Pomelo.EntityFrameworkCore.MySql;
 using Microsoft.Extensions.Configuration;
 using FluentAssertions.Common;
 using System.Configuration;
+using MySql.Data.MySqlClient; 
+
 
 var builder = WebApplication.CreateBuilder(args);
 

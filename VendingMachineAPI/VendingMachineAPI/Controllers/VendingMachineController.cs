@@ -64,11 +64,10 @@ namespace VendingMachineAPI.Controllers
             { 
                 return BadRequest();
             }
-
-        } 
+        }
 
         [HttpPost("AddDevice")]
-        public async Task<IActionResult> AddDevice(AddDeviceRequest addDeviceRequest)
+        public async Task<IActionResult> AddDevice(DeviceRequest addDeviceRequest)
         {
             List<Device> devicesList = await dbContext.Devices.ToListAsync(); 
             int numberOfElements = devicesList.Count;
@@ -131,7 +130,7 @@ namespace VendingMachineAPI.Controllers
 
         [HttpPut]
         [Route("{id:int}")]
-        public async Task<IActionResult> UpdateDevice([FromRoute] int id, UpdateDeviceRequest updateDeviceRequest)
+        public async Task<IActionResult> UpdateDevice([FromRoute] int id, DeviceRequest updateDeviceRequest)
         {
             var device = await dbContext.Devices.FindAsync(id);
             if (device == null)

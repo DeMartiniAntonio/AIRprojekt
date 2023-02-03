@@ -1,6 +1,6 @@
 ﻿namespace VendingMachineAPI.Models
 {
-    public class UpdateDeviceRequest
+    public class DeviceRequest
     {
         public decimal Lat { get; set; }
         public decimal Long { get; set; }
