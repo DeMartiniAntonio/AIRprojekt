@@ -1,6 +1,6 @@
 ﻿namespace VendingMachineAPI.Models
 {
-    public class AddUserRequest
+    public class UserRequest
     {
         public string First_name { get; set; }
         public string Last_name { get; set; }

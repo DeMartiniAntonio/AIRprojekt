@@ -17,7 +17,7 @@ namespace VendingMachineAPI.Controllers
         }
 
        
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll(string ObjectsType)
         {
             if (ObjectsType.ToLower() == "users")
@@ -32,15 +32,22 @@ namespace VendingMachineAPI.Controllers
             {
                 return Ok(await dbContext.Events.ToListAsync());
             }
+            else if (ObjectsType.ToLower() == "roles")
+            {
+                return Ok(await dbContext.Roles.ToListAsync());
+            }
+            else if (ObjectsType.ToLower() == "login")
+            {
+                return Ok(await dbContext.Login.ToListAsync());
+            }
             else
             {
                 return BadRequest();
             }
         }
 
-        [HttpGet]
-        [Route("{id:int}")]
-        public async Task<IActionResult> GetObject([FromRoute] int id, string ObjectType)
+        [HttpGet("GetOne")]
+        public async Task<IActionResult> GetObject(int id, string ObjectType)
         {
             if (ObjectType.ToLower() == "device")
             {
@@ -53,12 +60,39 @@ namespace VendingMachineAPI.Controllers
             }
             else if (ObjectType.ToLower() == "user")
             {
-                var user = await dbContext.Devices.FindAsync(id);
+                var user = await dbContext.Users.FindAsync(id);
                 if (user == null)
                 {
                     return NotFound();
                 }
                 return Ok(user); 
+            }
+            else if (ObjectType.ToLower() == "role")
+            {
+                var role = await dbContext.Roles.FindAsync(id);
+                if (role == null)
+                {
+                    return NotFound();
+                }
+                return Ok(role);
+            }
+            else if (ObjectType.ToLower() == "login")
+            {
+                var login = await dbContext.Login.FindAsync(id);
+                if (login == null)
+                {
+                    return NotFound();
+                }
+                return Ok(login);
+            }
+            else if (ObjectType.ToLower() == "event")
+            {
+                var selectedEvent = await dbContext.Login.FindAsync(id);
+                if (selectedEvent == null)
+                {
+                    return NotFound();
+                }
+                return Ok(selectedEvent);
             }
             else
             { 
@@ -96,9 +130,9 @@ namespace VendingMachineAPI.Controllers
 
             return Ok(newDevice);
         }
-
+         
         [HttpPost("AddUser")]
-        public async Task<IActionResult> AddUser(AddUserRequest addUserRequest)
+        public async Task<IActionResult> AddUser(UserRequest addUserRequest)
         {
             List<User> usersList = await dbContext.Users.ToListAsync();
             int numberOfElements = usersList.Count;
@@ -128,9 +162,92 @@ namespace VendingMachineAPI.Controllers
             return Ok(newUser);
         }
 
-        [HttpPut]
-        [Route("{id:int}")]
-        public async Task<IActionResult> UpdateDevice([FromRoute] int id, DeviceRequest updateDeviceRequest)
+        [HttpPost("AddRole")]
+        public async Task<IActionResult> AddRole(string description)
+        {
+            List<Role> rolesList = await dbContext.Roles.ToListAsync();
+            int numberOfElements = rolesList.Count;
+            int newId;
+            if (numberOfElements > 0)
+            {
+                newId = rolesList[numberOfElements - 1].Role_ID + 1;
+            }
+            else
+            {
+                newId = 0;
+            }
+
+            var newRole = new Role()
+            {
+                Role_ID = newId,
+                Description = description
+            };
+
+            await dbContext.Roles.AddAsync(newRole);
+            await dbContext.SaveChangesAsync();
+
+            return Ok(newRole);
+        }
+
+        [HttpPost("AddLogin")]
+        public async Task<IActionResult> AddLogin(int user_id,  DateTime date_time)
+        {
+            List<Login> loginsList = await dbContext.Login.ToListAsync();
+            int numberOfElements = loginsList.Count;
+            int newId;
+            if (numberOfElements > 0)
+            {
+                newId = loginsList[numberOfElements - 1].Login_ID + 1;
+            }
+            else
+            {
+                newId = 0;
+            }
+
+            var newLogin = new Login()
+            {
+                Login_ID = newId,
+                User_id = user_id,
+                Date_time = date_time
+            };
+
+            await dbContext.Login.AddAsync(newLogin);
+            await dbContext.SaveChangesAsync();
+
+            return Ok(newLogin);
+        }
+
+        [HttpPost("AddEvent")]
+        public async Task<IActionResult> AddEvent(EventRequest eventRequest)
+        {
+            List<Event> eventsList = await dbContext.Events.ToListAsync();
+            int numberOfElements = eventsList.Count;
+            int newId;
+            if (numberOfElements > 0)
+            {
+                newId = eventsList[numberOfElements - 1].Event_ID + 1;
+            }
+            else
+            {
+                newId = 0;
+            }
+
+            var newEvent = new Event()
+            {
+                Event_ID = newId,
+                User_id = eventRequest.User_id,
+                Device_id = eventRequest.Device_id,
+                Date_time = eventRequest.Date_time
+            };
+
+            await dbContext.Events.AddAsync(newEvent);
+            await dbContext.SaveChangesAsync();
+
+            return Ok(newEvent);
+        }
+        
+        [HttpPut("UpdateDevice")]
+        public async Task<IActionResult> UpdateDevice(int id, DeviceRequest updateDeviceRequest)
         {
             var device = await dbContext.Devices.FindAsync(id);
             if (device == null)
@@ -150,9 +267,50 @@ namespace VendingMachineAPI.Controllers
             }
         }
 
+        [HttpPut("UpdateUser")]
+        public async Task<IActionResult> UpdateUser(int id, UserRequest updateUserRequest)
+        {
+            var user = await dbContext.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                user.First_name = updateUserRequest.First_name;
+                user.Last_name = updateUserRequest.Last_name;
+                user.Email= updateUserRequest.Email;
+                user.Password= updateUserRequest.Password;
+                user.Role_id= updateUserRequest.Role_id;
+
+
+                await dbContext.SaveChangesAsync();
+                return Ok(user);
+            }
+        }
+
+
+        [HttpPut("UpdateEvent")]
+        public async Task<IActionResult> UpdateEvent(int id, EventRequest updateEventRequest)
+        {
+            var selectedevent = await dbContext.Events.FindAsync(id);
+            if (selectedevent == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                selectedevent.Date_time = updateEventRequest.Date_time;
+                selectedevent.Device_id = updateEventRequest.Device_id;
+                selectedevent.User_id= updateEventRequest.User_id;
+
+                await dbContext.SaveChangesAsync();
+                return Ok(selectedevent);
+            }
+        }
+
         [HttpDelete]
-        [Route("{id:int}")]
-        public async Task<IActionResult> DeleteDevice([FromRoute] int id, string ForDelete)
+        public async Task<IActionResult> DeleteDevice(int id, string ForDelete)
         {
             if (ForDelete.ToLower() == "device")
             {
@@ -174,6 +332,36 @@ namespace VendingMachineAPI.Controllers
                     return Ok(ObjectForDelete);
                 }
             }
+            else if (ForDelete.ToLower() == "role")
+            {
+                var ObjectForDelete = await dbContext.Roles.FindAsync(id);
+                if (ObjectForDelete != null)
+                {
+                    dbContext.Roles.Remove(ObjectForDelete);
+                    await dbContext.SaveChangesAsync();
+                    return Ok(ObjectForDelete);
+                }
+            }
+            else if (ForDelete.ToLower() == "login")
+            {
+                var ObjectForDelete = await dbContext.Login.FindAsync(id);
+                if (ObjectForDelete != null)
+                {
+                    dbContext.Login.Remove(ObjectForDelete);
+                    await dbContext.SaveChangesAsync();
+                    return Ok(ObjectForDelete);
+                }
+            }
+            else if (ForDelete.ToLower() == "event")
+            {
+                var ObjectForDelete = await dbContext.Events.FindAsync(id);
+                if (ObjectForDelete != null)
+                {
+                    dbContext.Events.Remove(ObjectForDelete);
+                    await dbContext.SaveChangesAsync();
+                    return Ok(ObjectForDelete);
+                }
+            }
             else
             {
                 return BadRequest();
@@ -181,6 +369,6 @@ namespace VendingMachineAPI.Controllers
 
             return NotFound();
         }
-        
+
     }
 }
