@@ -100,6 +100,34 @@ namespace VendingMachineAPI.Controllers
             }
         }
 
+        [HttpGet("UniqueEmail")]
+        public async Task<IActionResult> UniqueEmail(string email)
+        {
+            User user = await dbContext.Users.Where(p => p.Email == email).FirstOrDefaultAsync(); 
+            if (user != null)
+            { 
+                return BadRequest(user); 
+            }
+            else
+            {
+                return Ok();
+            }
+        }
+
+        [HttpGet("LoginRequest")]
+        public async Task<IActionResult> LoginRequest(string email, string password)
+        {
+            User user = await dbContext.Users.Where(p => p.Email == email && p.Password == password).FirstOrDefaultAsync();
+            if (user == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(user);
+            }
+        }
+
         [HttpPost("AddDevice")]
         public async Task<IActionResult> AddDevice(DeviceRequest addDeviceRequest)
         {
