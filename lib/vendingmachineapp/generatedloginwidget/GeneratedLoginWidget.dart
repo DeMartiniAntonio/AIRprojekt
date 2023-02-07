@@ -17,11 +17,11 @@ class GeneratedLoginWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
         child: ClipRRect(
-      borderRadius: BorderRadius.zero,
-      child: Container(
+        borderRadius: BorderRadius.zero,
+          child: Container(
         width: 390.0,
         height: 844.0,
-        child: Stack(
+            child: Stack(
             fit: StackFit.expand,
             alignment: Alignment.center,
 
@@ -55,6 +55,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     z: 0,
                     child: TextboxPasswordLogin()),
               ),
+
               Positioned(
                 left: 41.0,
                 top: null,

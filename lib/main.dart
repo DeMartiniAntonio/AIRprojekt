@@ -21,6 +21,7 @@ class VendingMachineApp extends StatelessWidget {
       routes: {
         '/GeneratedRegistrationWidget': (context) =>
             GeneratedRegistrationWidget(),
+
         '/GeneratedLoginWidget': (context) => GeneratedLoginWidget(),
         '/GeneratedQR_code_scanWidget': (context) =>
             GeneratedQR_code_scanWidget(),
