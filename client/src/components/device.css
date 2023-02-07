@@ -1,0 +1,10 @@
+.device-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.device-card {
+    display: flex;
+    flex-direction: column;
+}
