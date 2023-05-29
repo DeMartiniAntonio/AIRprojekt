@@ -1,4 +1,4 @@
-import { Modal, Button, Checkbox, Form, Input } from "antd";
+import { Form, Input, Modal } from "antd";
 import React from "react";
 
 const DeviceModal = ({
