@@ -15,4 +15,18 @@
 .loginError {
   text-align: center;
   color: red;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 9000;
+}
+
+.page-content {
+  margin-top: 50px;
 }

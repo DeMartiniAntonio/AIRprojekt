@@ -15,20 +15,22 @@ function App() {
   return (
     <BrowserRouter>
       <Layout />
-      {isLoggedIn ? (
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/devices" element={<Devices />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/statistics" element={<Statistics />} />
-          <Route path="/*" element={<Navigate to="/" />} />
-        </Routes>
-      ) : (
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/*" element={<Navigate to="/login" />} />
-        </Routes>
-      )}
+      <div className="page-content">
+        {isLoggedIn ? (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/devices" element={<Devices />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/statistics" element={<Statistics />} />
+            <Route path="/*" element={<Navigate to="/" />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/*" element={<Navigate to="/login" />} />
+          </Routes>
+        )}
+      </div>
     </BrowserRouter>
   );
 }
