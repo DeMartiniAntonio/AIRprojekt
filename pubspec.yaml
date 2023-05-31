@@ -3,6 +3,7 @@ name: "flutterapp"
 publish_to: "none"
 version: "1.0.0+1"
 dependencies:
+  qr_code_scanner: "^1.0.1"
   cupertino_icons: "^1.0.5"
   path_drawing: "^1.0.0"
   flutter: 

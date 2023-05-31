@@ -1,0 +1,47 @@
+description: "A new Flutter application."
+name: "flutterapp"
+publish_to: "none"
+version: "1.0.0+1"
+dependencies:
+  qr_code_scanner: "^1.0.1"
+  cupertino_icons: "^1.0.5"
+  path_drawing: "^1.0.0"
+  flutter: 
+    sdk: "flutter"
+  http: ^0.13.5
+  mailer: ^4.0.0
+
+dev_dependencies: 
+  flutter_test: 
+    sdk: "flutter"
+
+
+environment: 
+  sdk: ">=2.12.0 <3.0.0"
+flutter: 
+  assets: 
+    - "assets/images/"
+  fonts: 
+    - 
+      family: "Inter"
+      fonts: 
+        - 
+          asset: "fonts/Inter-700.ttf"
+          style: "normal"
+          weight: 700
+    - 
+      family: "Nunito"
+      fonts: 
+        - 
+          asset: "fonts/Nunito-regular.ttf"
+          style: "normal"
+          weight: 400
+        - 
+          asset: "fonts/Nunito-800.ttf"
+          style: "normal"
+          weight: 800
+        - 
+          asset: "fonts/Nunito-700.ttf"
+          style: "normal"
+          weight: 700
+  uses-material-design: true
