@@ -28,9 +28,12 @@ const Device = ({ device, onStartDevice, onStopDevice, onEdit, onDelete }) => {
         actions={[
           <PlayCircleOutlined
             key="start"
-            onClick={() => onStartDevice(device)}
+            onClick={() => !device.active && onStartDevice(device)}
           />,
-          <StopOutlined key="stop" onClick={() => onStopDevice(device)} />,
+          <StopOutlined
+            key="stop"
+            onClick={() => device.active && onStopDevice(device)}
+          />,
           <EditOutlined key="edit" onClick={() => onEdit(device)} />,
           <DeleteOutlined key="delete" onClick={handleDelete} />,
         ]}

@@ -12,10 +12,11 @@ const DeviceModal = ({
   const handleEdit = () => {
     form.validateFields().then((values) => {
       if (device) {
-        handleFinishEdit(values);
+        handleFinishEdit({ ...device, ...values });
       } else {
         handleAddDevice(values);
       }
+      form.resetFields();
     });
   };
 
