@@ -25,9 +25,10 @@ const Login = () => {
         .then((res) => res.json())
         .then((res) => {
           if (res.status == "404") {
-            setError("Username or password are invalid.");
+            setError("Username or password is invalid.");
           } else {
             localStorage.setItem("token", `user:${res.user_ID}`);
+            localStorage.setItem("user", `${res.email}`);
             setIsLoggedIn(true);
             navigate("/");
           }

@@ -1,13 +1,14 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
-import { AuthContext } from "./context/AuthContext";
 import Layout from "./components/Layout";
+import { AuthContext } from "./context/AuthContext";
 import Home from "./pages";
 import Devices from "./pages/devices";
 import Events from "./pages/events";
-import Statistics from "./pages/statistics";
 import Login from "./pages/login";
+import Profile from "./pages/profile";
+import Statistics from "./pages/statistics";
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext);
@@ -15,22 +16,21 @@ function App() {
   return (
     <BrowserRouter>
       <Layout />
-      <div className="page-content">
-        {isLoggedIn ? (
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/devices" element={<Devices />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/statistics" element={<Statistics />} />
-            <Route path="/*" element={<Navigate to="/" />} />
-          </Routes>
-        ) : (
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/*" element={<Navigate to="/login" />} />
-          </Routes>
-        )}
-      </div>
+      {isLoggedIn ? (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/devices" element={<Devices />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/statistics" element={<Statistics />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/*" element={<Navigate to="/login" />} />
+        </Routes>
+      )}
     </BrowserRouter>
   );
 }

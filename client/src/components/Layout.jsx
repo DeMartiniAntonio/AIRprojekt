@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { UserOutlined } from "@ant-design/icons";
 
 import { AuthContext } from "../context/AuthContext";
 import "./layout.css";
@@ -9,6 +10,7 @@ const Layout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setIsLoggedIn(false);
   };
 
@@ -16,16 +18,51 @@ const Layout = () => {
     <div className="nav-wrapper">
       {isLoggedIn ? (
         <>
-          <Link to="/">Dashboard</Link>
-          <Link to="/devices">Devices</Link>
-          <Link to="/events">Events</Link>
-          <Link to="/statistics">Statistics</Link>
-          <Link href="/login" onClick={handleLogout}>
-            Logout
-          </Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Dashboard
+          </NavLink>
+          <NavLink
+            to="/devices"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Devices
+          </NavLink>
+          <NavLink
+            to="/events"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Events
+          </NavLink>
+          <NavLink
+            to="/statistics"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Statistics
+          </NavLink>
+          <div className="userNavigation">
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              <UserOutlined style={{ color: "white" }} />
+            </NavLink>
+            <Link href="/login" onClick={handleLogout}>
+              Logout
+            </Link>
+          </div>
         </>
       ) : (
-        <Link to="/login">Login</Link>
+        <div className="userNavigation">
+          <NavLink
+            to="/login"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Login
+          </NavLink>
+        </div>
       )}
     </div>
   );

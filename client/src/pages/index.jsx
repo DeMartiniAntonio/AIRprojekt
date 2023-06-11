@@ -5,7 +5,7 @@ import { api } from "../utils/api";
 
 const containerStyle = {
   width: "100%",
-  height: "90vh",
+  height: "calc(100vh - 60px)",
 };
 
 const center = {
