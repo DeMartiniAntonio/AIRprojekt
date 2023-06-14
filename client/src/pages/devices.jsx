@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
 import Device from "../components/Device";
 import { api } from "../utils/api";
@@ -126,9 +127,9 @@ const Devices = () => {
   };
 
   return (
-    <>
-      <Button type="primary" onClick={onAddDevice}>
-        Add device
+    <div className="page-content">
+      <Button type="primary" onClick={onAddDevice} className="addDeviceButton">
+        <PlusOutlined />
       </Button>
       <div className="device-list-wrapper">
         {devices?.map((device) => (
@@ -150,7 +151,7 @@ const Devices = () => {
           />
         )}
       </div>
-    </>
+    </div>
   );
 };
 

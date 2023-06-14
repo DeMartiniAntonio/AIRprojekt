@@ -24,7 +24,7 @@ const Device = ({ device, onStartDevice, onStopDevice, onEdit, onDelete }) => {
   return (
     <>
       <Card
-        style={{ width: 300 }}
+        style={{ width: 275 }}
         actions={[
           <PlayCircleOutlined
             key="start"
@@ -44,7 +44,7 @@ const Device = ({ device, onStartDevice, onStopDevice, onEdit, onDelete }) => {
           <p>Long: {device.long}</p>
           <p>Stock: {device.stock}</p>
           <p>Price: {device.price}</p>
-          <p>Active: {device.active ? "Da" : "Ne"}</p>
+          <p>Active: {device.active ? "Yes" : "No"}</p>
         </div>
       </Card>
     </>
