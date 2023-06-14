@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import { Select, Table } from "antd";
 import { useEffect, useState } from "react";
 
 import { api } from "../utils/api";
@@ -30,25 +30,49 @@ const columns = [
 ];
 
 const Events = () => {
-  const [events, setEvents] = useState();
+  const [devices, setDevices] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
+    fetchDevices();
     fetchEvents();
   }, []);
 
-  const fetchEvents = () => {
+  const fetchDevices = () => {
+    fetch(`${api}/GetAll?ObjectsType=devices`)
+      .then((res) => res.json())
+      .then((res) => {
+        setDevices(res);
+      });
+  };
+
+  const fetchEvents = (value = undefined) => {
     fetch(`${api}/GetAll?ObjectsType=events`)
       .then((res) => res.json())
       .then((res) => {
-        setEvents(res);
-        console.log(res);
+        let events = res;
+        if (value) {
+          events = events.filter((event) => event.device_id === value);
+        }
+        setEvents(events);
       });
   };
 
   return (
-    <>
+    <div className="page-content">
+      <Select
+        allowClear
+        showSearch
+        placeholder="Select a device"
+        onChange={fetchEvents}
+        options={devices?.map((device) => ({
+          value: device.device_ID,
+          label: device.device_ID,
+        }))}
+        style={{ marginBottom: 15 }}
+      />
       <Table columns={columns} dataSource={events} />
-    </>
+    </div>
   );
 };
 
