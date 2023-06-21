@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, Spin } from "antd";
 
 import { api } from "../utils/api";
 
@@ -98,7 +98,7 @@ const Profile = () => {
           </Form.Item>
         </Form>
       ) : (
-        "loading..."
+        <Spin />
       )}
     </div>
   );
