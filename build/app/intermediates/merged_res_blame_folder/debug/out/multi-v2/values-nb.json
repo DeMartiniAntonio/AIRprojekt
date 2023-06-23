@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - Copy\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nb\\values-nb.xml",
+=======
+            "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - registracija zavrsena do  kraja\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nb\\values-nb.xml",
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
             "map": [
                 {
                     "source": "C:\\Users\\Antonio\\.gradle\\caches\\transforms-3\\5c4f24e2c2c13d44b53e7a06a5dbe0c8\\transformed\\jetified-play-services-basement-17.4.0\\res\\values-nb\\values.xml",

@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - Copy\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
@@ -39,6 +40,12 @@
                 },
                 {
                     "source": "C:\\Users\\Antonio\\Desktop\\AIR - Copy\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+=======
+            "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - registracija zavrsena do  kraja\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Antonio\\Desktop\\AIR - registracija zavrsena do  kraja\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

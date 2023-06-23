@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/helpers/svg/svg.dart';
+import 'package:flutterapp/vendingmachineapp/generatedqr_code_scanwidget/general/ButtonQR.dart';
 
 import '../generatedloginwidget/generated/Logo.dart';
 
@@ -73,7 +74,10 @@ class GeneratedQR_code_scanWidget extends StatelessWidget {
                       z: 0,
                       child: ButtonQR()),
                 ),
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
             ]),
       ),
     ));

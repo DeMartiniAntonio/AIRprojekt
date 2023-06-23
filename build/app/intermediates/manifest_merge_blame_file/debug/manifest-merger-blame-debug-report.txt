@@ -12,6 +12,7 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
 14-->C:\Users\Antonio\Desktop\AIR - Copy\android\app\src\debug\AndroidManifest.xml:6:5-66
 14-->C:\Users\Antonio\Desktop\AIR - Copy\android\app\src\debug\AndroidManifest.xml:6:22-64
 15    <uses-permission android:name="android.permission.CAMERA" />
@@ -77,6 +78,50 @@
 51            android:launchMode="singleTop"
 52            android:theme="@style/LaunchTheme"
 53            android:windowSoftInputMode="adjustResize" >
+=======
+14-->C:\Users\Antonio\Desktop\AIR - registracija zavrsena do  kraja\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Antonio\Desktop\AIR - registracija zavrsena do  kraja\android\app\src\debug\AndroidManifest.xml:6:22-64
+15
+16    <application
+17        android:name="android.app.Application"
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.6.0] C:\Users\Antonio\.gradle\caches\transforms-3\c80a7945d89c3e853cfcdbc4a0da8557\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+21        android:label="flutterapp" >
+22        <activity
+23            android:name="com.example.flutterapp.MainActivity"
+24            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+25            android:exported="true"
+26            android:hardwareAccelerated="true"
+27            android:launchMode="singleTop"
+28            android:theme="@style/LaunchTheme"
+29            android:windowSoftInputMode="adjustResize" >
+30
+31            <!--
+32                 Specifies an Android theme to apply to this Activity as soon as
+33                 the Android process has started. This theme is visible to the user
+34                 while the Flutter UI initializes. After that, this theme continues
+35                 to determine the Window background behind the Flutter UI.
+36            -->
+37            <meta-data
+38                android:name="io.flutter.embedding.android.NormalTheme"
+39                android:resource="@style/NormalTheme" />
+40
+41            <intent-filter>
+42                <action android:name="android.intent.action.MAIN" />
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+45            </intent-filter>
+46        </activity>
+47        <!--
+48             Don't delete the meta-data below.
+49             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+50        -->
+51        <meta-data
+52            android:name="flutterEmbedding"
+53            android:value="2" />
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
 54
 55            <!--
 56                 Specifies an Android theme to apply to this Activity as soon as

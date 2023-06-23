@@ -1,8 +1,11 @@
 <component name="libraryTable">
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/permission_handler-8.3.0" />
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_barcode_scanner-2.0.0" />
+=======
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
       <root url="file://$USER_HOME$/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/qr_code_scanner-1.0.1" />
     </CLASSES>
     <JAVADOC />

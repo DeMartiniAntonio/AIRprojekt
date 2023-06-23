@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - Copy\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-cs\\values-cs.xml",
+=======
+            "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - registracija zavrsena do  kraja\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-cs\\values-cs.xml",
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
             "map": [
                 {
                     "source": "C:\\Users\\Antonio\\.gradle\\caches\\transforms-3\\dcefb52a23d1ca2d5431236f850ddb5a\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-cs\\values-cs.xml",

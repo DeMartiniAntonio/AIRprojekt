@@ -1,5 +1,9 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter/material.dart';
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxConfirmPassword.dart';
@@ -9,13 +13,19 @@ import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generat
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxLastName.dart';
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxEmail.dart';
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxPasswordRegistration.dart';
+import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxConfirmPassword.dart';
 
 var addUserEndpoint = 'https://air2218.mobilisis.hr/api/api/VendingMachine/AddUser';
 var uniqueEmail='https://air2218.mobilisis.hr/api/api/VendingMachine/UniqueEmail';
 var emailExist;
 
+<<<<<<< HEAD
 testEmail(String email) async {
     final response =await http.get(Uri.parse('$uniqueEmail/?email=$email'));
+=======
+Future<bool> testEmail(String email) async {
+    final response =await http.get(Uri.parse('$uniqueEmail/$email'));
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
     if (response.statusCode == 200) {
       return true;
     } else {
@@ -57,15 +67,25 @@ class ButtonSignup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+<<<<<<< HEAD
           onTap: () async {
+=======
+          onTap: () {
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
             var firstName = TextBoxFirstName.firstNameRegistration.text;
             var lastName = TextBoxLastName.lastNameRegistration.text;
             var email = TextBoxEmail.emailRegistration.text;
             var password = TextBoxPasswordRegistration.passwordRegistration.text;
+<<<<<<< HEAD
             var confirmPassword =TextBoxConfirmPassword.confirmPassword.text;
             int roleId = 2;
 
             emailExist= await testEmail(email);
+=======
+            var confirmPassword = TextBoxConfirmPassword.confirmPassword.text;
+            int roleId = 2;
+
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
 
             var errorTest = dataTesting(firstName,lastName,email,password,confirmPassword);
 
@@ -168,26 +188,39 @@ class ButtonSignup extends StatelessWidget {
     );
   }
 
+<<<<<<< HEAD
     dataTesting(String firstName, String lastName, String email, String password, String confirmPassword)  {
+=======
+    dataTesting(String firstName, String lastName, String email, String password, String confirmPassword) {
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
         if (firstName.isEmpty || lastName.isEmpty || email.isEmpty ||
             password.isEmpty || confirmPassword.isEmpty) {
           return "Some fields are empty";
         }
 
         if (email.endsWith("@gmail.com")) {
+<<<<<<< HEAD
 
           print(emailExist);
+=======
+          emailExist = testEmail(email);
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
         }
         else {
           return "Email is not valid!";
         }
 
+<<<<<<< HEAD
         if (emailExist == false) {
           return "Email already exists!";
         }
 
         if(password.length<8){
           return "Password is too short!";
+=======
+        if (emailExist == true) {
+          return "Email already exist!";
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
         }
 
         if (password == confirmPassword) {

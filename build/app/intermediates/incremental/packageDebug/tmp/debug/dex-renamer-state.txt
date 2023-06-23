@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 #Tue May 16 15:29:35 CEST 2023
 base.1=C\:\\Users\\Antonio\\Desktop\\AIR - Copy\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
 base.0=C\:\\Users\\Antonio\\Desktop\\AIR - Copy\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.1=classes2.dex
+=======
+#Tue May 16 15:49:21 CEST 2023
+base.0=C\:\\Users\\Antonio\\Desktop\\AIR - registracija zavrsena do  kraja\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
 renamed.0=classes.dex
 path.0=classes.dex

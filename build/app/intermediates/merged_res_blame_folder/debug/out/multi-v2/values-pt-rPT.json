@@ -1,7 +1,11 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - Copy\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+=======
+            "outputFile": "C:\\Users\\Antonio\\Desktop\\AIR - registracija zavrsena do  kraja\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
             "map": [
                 {
                     "source": "C:\\Users\\Antonio\\.gradle\\caches\\transforms-3\\e746439dc8e76af99b715764c466b436\\transformed\\appcompat-1.4.2\\res\\values-pt-rPT\\values-pt-rPT.xml",

@@ -25,6 +25,7 @@ class ButtonSignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+<<<<<<< HEAD
           onTap: () async {
             var username= TextboxUsernameLogin.signUpUserNameController.text;
             var password= TextboxPasswordLogin.signUpPasswordController.text;
@@ -51,6 +52,34 @@ class ButtonSignIn extends StatelessWidget {
               );
             }
           },
+=======
+      onTap: () async {
+        var username= TextboxUsernameLogin.signUpUserNameController.text;
+        var password= TextboxPasswordLogin.signUpPasswordController.text;
+
+        bool isUserExisting = await existnigUser(username, password);
+        if (isUserExisting) {
+          Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
+        }
+        else{
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+
+              title: Text("Email or password is invalid!"),
+              actions: [
+                TextButton(
+                    child: Text('Back'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }
+                ),
+              ],
+            ),
+          );
+        }
+      },
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
 
       //onTap: () => Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget'),
       child: Container(
@@ -94,7 +123,11 @@ class ButtonSignIn extends StatelessWidget {
                 width: null,
                 height: 38.0,
                 child: TransformHelper.translate(
+<<<<<<< HEAD
                     x: 0.00, y: 1.42, z: 0, child: Text(
+=======
+                  x: 0.00, y: 1.42, z: 0, child: Text(
+>>>>>>> 5338af3d0c2c59bd13452f369e7ab3c9002e3110
                   '''Sign In''',
                   overflow: TextOverflow.visible,
                   textAlign: TextAlign.center,
