@@ -4,6 +4,7 @@ import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generat
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxLastName.dart';
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/ButtonSignup.dart';
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxPasswordRegistration.dart';
+import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxConfirmPassword.dart';
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/GeneratedLogoWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedregistrationwidget/generated/TextBoxEmail.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
@@ -39,7 +40,7 @@ class GeneratedRegistrationWidget extends StatelessWidget {
                       top: null,
                       right: null,
                       bottom: null,
-                      width: 188.0,
+                      width: 200.0,
                       height: 42.0,
                       child: TransformHelper.translate(
                           x: 2.00,
@@ -98,6 +99,19 @@ class GeneratedRegistrationWidget extends StatelessWidget {
                           y: 80.27,
                           z: 0,
                           child: TextBoxPasswordRegistration()),
+                    ),
+                    Positioned(
+                      left: 25.0,
+                      top: null,
+                      right: 25.0,
+                      bottom: null,
+                      width: null,
+                      height: 62.53499984741211,
+                      child: TransformHelper.translate(
+                          x: 0.00,
+                          y: 160.27,
+                          z: 0,
+                          child: TextBoxConfirmPassword()),
                     ),
                     Positioned(
                       left: 25.0,

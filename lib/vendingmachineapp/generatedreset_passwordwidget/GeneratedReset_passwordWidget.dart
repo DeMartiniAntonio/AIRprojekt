@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
-import 'package:flutterapp/vendingmachineapp/generatedreset_passwordwidget/generated/GeneratedLabel_ResetPWWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedreset_passwordwidget/generated/GeneratedEnterEmailWidget.dart';
 
 /* Frame Reset_password
@@ -9,46 +8,49 @@ import 'package:flutterapp/vendingmachineapp/generatedreset_passwordwidget/gener
 class GeneratedReset_passwordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: ClipRRect(
-      borderRadius: BorderRadius.zero,
-      child: Container(
-        width: 390.0,
-        height: 844.0,
-        child: Stack(
-            fit: StackFit.expand,
-            alignment: Alignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.zero,
-                child: Container(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                ),
-              ),
-              Positioned(
-                left: 39.0,
-                top: null,
-                right: 39.0,
-                bottom: null,
-                width: null,
-                height: 250.0500030517578,
-                child: TransformHelper.translate(
-                    x: 0.00,
-                    y: -147.97,
-                    z: 0,
-                    child: GeneratedEnterEmailWidget()),
-              ),
-              Positioned(
-                left: 0.0,
-                top: 0.0,
-                right: 0.0,
-                bottom: null,
-                width: null,
-                height: 85.0,
-                child: GeneratedLabel_ResetPWWidget(),
-              )
-            ]),
-      ),
-    ));
+    var _email;
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 29, 53, 87),
+          title: Text("Reset password"),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+        ),
+
+        body: ClipRRect(
+          borderRadius: BorderRadius.zero,
+          child: Container(
+            width: 390.0,
+            height: 844.0,
+            child: Stack(
+                fit: StackFit.expand,
+                alignment: Alignment.center,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.zero,
+                    child: Container(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                  Positioned(
+                    left: 39.0,
+                    top: null,
+                    right: 39.0,
+                    bottom: null,
+                    width: null,
+                    height: 250.0500030517578,
+                    child: TransformHelper.translate(
+                        x: 0.00,
+                        y: -147.97,
+                        z: 0,
+                        child: GeneratedEnterEmailWidget()),
+                  ),
+                ]),
+          ),
+        ));
+
+
   }
 }

@@ -26,8 +26,8 @@ class VendingMachineApp extends StatelessWidget {
         '/GeneratedQR_code_scanWidget': (context) =>
             GeneratedQR_code_scanWidget(),
         '/GeneratedPaymentWidget': (context) => GeneratedPaymentWidget(),
-        '/GeneratedReset_passwordWidget': (context) =>
-            GeneratedReset_passwordWidget(),
+        '/GeneratedReset_passwordWidget': (context) =>  GeneratedReset_passwordWidget(),
+
       },
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedChooseapaymentmethodWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedButton_OtherPaymentWidget.dart';
+import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedButton_OtherWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedButton_RevolutWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedLabel_PaymentWidget.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
@@ -12,6 +11,7 @@ class GeneratedPaymentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+
         child: ClipRRect(
       borderRadius: BorderRadius.zero,
           child: Container(
@@ -28,8 +28,8 @@ class GeneratedPaymentWidget extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 0.25,
-                top: -0.2249755859375,
+                left: 0,
+                top: 0,
                 right: 0.0,
                 bottom: null,
                 width: null,
@@ -45,9 +45,9 @@ class GeneratedPaymentWidget extends StatelessWidget {
                 height: 62.04999923706055,
                 child: TransformHelper.translate(
                     x: 0.00,
-                    y: -135.98,
+                    y: -35.98,
                     z: 0,
-                    child: GeneratedButton_RevolutWidget()),
+                    child: GeneratedButton_OtherWidget()),
               ),
               Positioned(
                 left: 39.0,
@@ -58,10 +58,11 @@ class GeneratedPaymentWidget extends StatelessWidget {
                 height: 62.04999923706055,
                 child: TransformHelper.translate(
                     x: 0.00,
-                    y: -53.98,
+                    y: -135.98,
                     z: 0,
-                    child: GeneratedButton_OtherPaymentWidget()),
+                    child: GeneratedButton_RevolutWidget()),
               ),
+
               Positioned(
                 left: null,
                 top: null,
@@ -73,7 +74,20 @@ class GeneratedPaymentWidget extends StatelessWidget {
                     x: -0.18,
                     y: -247.77,
                     z: 0,
-                    child: GeneratedChooseapaymentmethodWidget()),
+                    child: Text(
+                      '''Choose a payment method''',
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        height: 1.210227219954781,
+                        fontSize: 23.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        color: Color.fromARGB(255, 0, 0, 0),
+
+                        /* letterSpacing: 0.0, */
+                      ),
+                    )),
               )
             ]),
       ),
