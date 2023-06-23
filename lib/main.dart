@@ -17,7 +17,7 @@ class VendingMachineApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/GeneratedLoginWidget',
+      initialRoute: '/GeneratedQR_code_scanWidget',
       routes: {
         '/GeneratedRegistrationWidget': (context) =>
             GeneratedRegistrationWidget(),
