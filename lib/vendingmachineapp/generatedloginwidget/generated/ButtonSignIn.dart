@@ -44,6 +44,8 @@ class ButtonSignIn extends StatelessWidget {
 
             bool isUserExisting = await existnigUser(username, password);
             if (isUserExisting) {
+              TextboxPasswordLogin.signUpPasswordController.clear();
+              TextboxUsernameLogin.signUpUserNameController.clear();
               Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
             }
             else{
@@ -56,6 +58,7 @@ class ButtonSignIn extends StatelessWidget {
                     TextButton(
                         child: Text('Back'),
                         onPressed: () {
+
                           Navigator.pop(context);
                         }
                     ),

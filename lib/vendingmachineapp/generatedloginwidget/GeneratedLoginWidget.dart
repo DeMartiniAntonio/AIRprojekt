@@ -70,19 +70,6 @@ class GeneratedLoginWidget extends StatelessWidget {
                     child: TextboxUsernameLogin()),
               ),
               Positioned(
-                left: null,
-                top: 505.0,
-                right: null,
-                bottom: null,
-                width: 169.4499969482422,
-                height: 47.900001525878906,
-                child: TransformHelper.translate(
-                    x: 0.72,
-                    y: 0.00,
-                    z: 0,
-                    child: ForgotYourPassword()),
-              ),
-              Positioned(
                 left: 39.0,
                 top: null,
                 right: 39.0,
@@ -95,32 +82,7 @@ class GeneratedLoginWidget extends StatelessWidget {
                     z: 0,
                     child: ButtonSignIn()),
               ),
-              Positioned(
-                left: null,
-                top: null,
-                right: null,
-                bottom: null,
-                width: 202.0,
-                height: 76.0,
-                child: TransformHelper.translate(
-                    x: 6.00,
-                    y: 208.00,
-                    z: 0,
-                    child: ButtonGoogleSignIn()),
-              ),
-              Positioned(
-                left: null,
-                top: null,
-                right: null,
-                bottom: null,
-                width: 193.0,
-                height: 75.0,
-                child: TransformHelper.translate(
-                    x: 1.50,
-                    y: 294.50,
-                    z: 0,
-                    child: ButtonFacebookSignIn()),
-              ),
+
               Positioned(
                 left: 0.0,
                 top: null,

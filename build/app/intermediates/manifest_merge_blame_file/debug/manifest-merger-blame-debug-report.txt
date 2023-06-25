@@ -1,0 +1,201 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.flutterapp"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="20"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\debug\AndroidManifest.xml:6:22-64
+15
+16    <queries>
+16-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:3:5-12:15
+17        <intent>
+17-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:4:9-7:18
+18            <action android:name="android.intent.action.VIEW" />
+18-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:5:13-65
+18-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:5:21-62
+19
+20            <data android:scheme="http" />
+20-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:6:13-43
+20-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:6:19-40
+21        </intent>
+22        <intent>
+22-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:8:9-11:18
+23            <action android:name="android.intent.action.VIEW" />
+23-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:5:13-65
+23-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:5:21-62
+24
+25            <data android:scheme="https" />
+25-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:6:13-43
+25-->C:\Users\Antonio\Desktop\New folder\AIR - Final\android\app\src\main\AndroidManifest.xml:6:19-40
+26        </intent>
+27    </queries>
+28
+29    <uses-permission android:name="android.permission.CAMERA" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+29-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
+29-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:22:22-62
+30    <uses-feature
+30-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+31        android:name="android.hardware.camera"
+31-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:26:9-47
+32        android:required="false" />
+32-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:27:9-33
+33    <uses-feature
+33-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+34        android:name="android.hardware.camera.front"
+34-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+35        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+35-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+36    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+37    <uses-feature
+37-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+38        android:name="android.hardware.camera.autofocus"
+38-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
+39        android:required="false" />
+39-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
+40    <uses-feature
+40-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+41        android:name="android.hardware.camera.flash"
+41-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+42        android:required="false" />
+42-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+43    <uses-feature
+43-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+44        android:name="android.hardware.screen.landscape"
+44-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+45        android:required="false" />
+45-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+46    <uses-feature
+46-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+47        android:name="android.hardware.wifi"
+47-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+48        android:required="false" />
+48-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+49
+50    <application
+51        android:name="android.app.Application"
+52        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+52-->[androidx.core:core:1.7.0] C:\Users\Antonio\.gradle\caches\transforms-3\3bad0096817faf91c5af68f2b0c43eb7\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+53        android:debuggable="true"
+54        android:icon="@mipmap/ic_launcher"
+55        android:label="flutterapp" >
+56        <activity
+57            android:name="com.example.flutterapp.MainActivity"
+58            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+59            android:exported="true"
+60            android:hardwareAccelerated="true"
+61            android:launchMode="singleTop"
+62            android:theme="@style/LaunchTheme"
+63            android:windowSoftInputMode="adjustResize" >
+64
+65            <!--
+66                 Specifies an Android theme to apply to this Activity as soon as
+67                 the Android process has started. This theme is visible to the user
+68                 while the Flutter UI initializes. After that, this theme continues
+69                 to determine the Window background behind the Flutter UI.
+70            -->
+71            <meta-data
+72                android:name="io.flutter.embedding.android.NormalTheme"
+73                android:resource="@style/NormalTheme" />
+74
+75            <intent-filter>
+76                <action android:name="android.intent.action.MAIN" />
+77
+78                <category android:name="android.intent.category.LAUNCHER" />
+79            </intent-filter>
+80        </activity>
+81        <!--
+82             Don't delete the meta-data below.
+83             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+84        -->
+85        <meta-data
+86            android:name="flutterEmbedding"
+87            android:value="2" />
+88
+89        <activity
+89-->[:url_launcher_android] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+90            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+90-->[:url_launcher_android] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+91            android:exported="false"
+91-->[:url_launcher_android] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+92            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+92-->[:url_launcher_android] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+93
+94        <provider
+94-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:11:9-20:20
+95            android:name="androidx.core.content.FileProvider"
+95-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-62
+96            android:authorities="com.example.flutterapp.fileprovider"
+96-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-64
+97            android:exported="false"
+97-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-37
+98            android:grantUriPermissions="true" >
+98-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-47
+99            <meta-data
+99-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:53
+100                android:name="android.support.FILE_PROVIDER_PATHS"
+100-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-67
+101                android:resource="@xml/filepaths" />
+101-->[:flutter_webview_plugin] C:\Users\Antonio\Desktop\New folder\AIR - Final\build\flutter_webview_plugin\intermediates\merged_manifest\debug\AndroidManifest.xml:19:17-50
+102        </provider>
+103
+104        <uses-library
+104-->[androidx.window:window:1.0.0-beta04] C:\Users\Antonio\.gradle\caches\transforms-3\d67fc9844a6cdcf0fc0df0b6df48c97c\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+105            android:name="androidx.window.extensions"
+105-->[androidx.window:window:1.0.0-beta04] C:\Users\Antonio\.gradle\caches\transforms-3\d67fc9844a6cdcf0fc0df0b6df48c97c\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+106            android:required="false" />
+106-->[androidx.window:window:1.0.0-beta04] C:\Users\Antonio\.gradle\caches\transforms-3\d67fc9844a6cdcf0fc0df0b6df48c97c\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+107        <uses-library
+107-->[androidx.window:window:1.0.0-beta04] C:\Users\Antonio\.gradle\caches\transforms-3\d67fc9844a6cdcf0fc0df0b6df48c97c\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+108            android:name="androidx.window.sidecar"
+108-->[androidx.window:window:1.0.0-beta04] C:\Users\Antonio\.gradle\caches\transforms-3\d67fc9844a6cdcf0fc0df0b6df48c97c\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+109            android:required="false" />
+109-->[androidx.window:window:1.0.0-beta04] C:\Users\Antonio\.gradle\caches\transforms-3\d67fc9844a6cdcf0fc0df0b6df48c97c\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+110
+111        <provider
+111-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Antonio\.gradle\caches\transforms-3\7fef1fff128db9ad4b00d2b23433c0dd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+112            android:name="androidx.startup.InitializationProvider"
+112-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Antonio\.gradle\caches\transforms-3\7fef1fff128db9ad4b00d2b23433c0dd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+113            android:authorities="com.example.flutterapp.androidx-startup"
+113-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Antonio\.gradle\caches\transforms-3\7fef1fff128db9ad4b00d2b23433c0dd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+114            android:exported="false" >
+114-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Antonio\.gradle\caches\transforms-3\7fef1fff128db9ad4b00d2b23433c0dd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+115            <meta-data
+115-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Antonio\.gradle\caches\transforms-3\7fef1fff128db9ad4b00d2b23433c0dd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+116                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+116-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Antonio\.gradle\caches\transforms-3\7fef1fff128db9ad4b00d2b23433c0dd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+117                android:value="androidx.startup" />
+117-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Antonio\.gradle\caches\transforms-3\7fef1fff128db9ad4b00d2b23433c0dd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+118            <meta-data
+118-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Antonio\.gradle\caches\transforms-3\f85883d6b173710fa8d2b5e4e3978c3e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+119                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+119-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Antonio\.gradle\caches\transforms-3\f85883d6b173710fa8d2b5e4e3978c3e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+120                android:value="androidx.startup" />
+120-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Antonio\.gradle\caches\transforms-3\f85883d6b173710fa8d2b5e4e3978c3e\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+121        </provider>
+122
+123        <activity
+123-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+124            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+124-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
+125            android:clearTaskOnLaunch="true"
+125-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+126            android:screenOrientation="sensorLandscape"
+126-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+127            android:stateNotNeeded="true"
+127-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+128            android:theme="@style/zxing_CaptureTheme"
+128-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+129            android:windowSoftInputMode="stateAlwaysHidden" />
+129-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Antonio\.gradle\caches\transforms-3\44762865316d618adc3a5e554aaa1708\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+130    </application>
+131
+132</manifest>

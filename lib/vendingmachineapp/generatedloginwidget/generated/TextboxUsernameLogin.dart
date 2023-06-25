@@ -37,6 +37,7 @@ class TextboxUsernameLogin extends StatelessWidget {
               fontFamily: 'Inter',
               fontWeight: FontWeight.w700,
             ),
+
             controller: signUpUserNameController,
             decoration: InputDecoration(
               border: InputBorder.none,

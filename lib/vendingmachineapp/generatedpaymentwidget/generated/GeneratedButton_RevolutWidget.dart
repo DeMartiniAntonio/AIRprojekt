@@ -8,7 +8,8 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutterapp/vendingmachineapp/Devices.dart';
 import 'package:flutterapp/vendingmachineapp/User.dart';
 import 'package:intl/intl.dart';
-
+import 'package:mqtt_client/mqtt_client.dart';
+import 'package:mqtt_client/mqtt_server_client.dart';
 
 
 class GeneratedButton_RevolutWidget extends StatelessWidget {
@@ -117,7 +118,7 @@ Future<void> startRevolutPayment(BuildContext context) async {
   if(response.statusCode==201){
     Uri uri =Uri.parse(json.decode(response.body)['checkout_url']);
     String order_id =json.decode(response.body)['id'];
-    print (uri);
+
     TextEditingController uriController = TextEditingController(text: uri.toString());
 
     showDialog(
@@ -167,6 +168,8 @@ Future<void> startRevolutPayment(BuildContext context) async {
         paymentPending = false;
         savingEvent();
         updateDevice();
+        sendMqttSignal();
+        Devices.deleteDevice();
         Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
 
       } else {
@@ -194,7 +197,7 @@ Future<void> updateDevice() async {
   });
 
 
-  final response = await http.put(Uri.parse('https://air2218.mobilisis.hr/api/api/VendingMachine/UpdateDevice?id=$idDevice'),
+  await http.put(Uri.parse('https://air2218.mobilisis.hr/api/api/VendingMachine/UpdateDevice?id=$idDevice'),
     headers: {'Content-Type': 'application/json'},
     body: body,
   );
@@ -224,3 +227,18 @@ Future<http.Response> savingEvent() async {
 
 
 
+MqttServerClient? client;
+
+void sendMqttSignal() async {
+  final client = MqttServerClient('test.mosquitto.org', 'AIR2218');
+  client.logging(on: true);
+
+  await client.connect(); // Connect to the broker
+  final builder = MqttClientPayloadBuilder();
+
+  builder.addString("1");
+  print("poslano");
+  client.publishMessage('AIR2218/vrata', MqttQos.exactlyOnce, builder.payload!);
+  client.disconnect();
+
+}

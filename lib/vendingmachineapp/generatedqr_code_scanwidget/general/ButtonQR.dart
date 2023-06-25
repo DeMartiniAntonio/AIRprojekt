@@ -130,7 +130,6 @@ Future<bool> getDevice(String code) async {
 
     return false;
   }
-  return false;
 }
 
 class ButtonQR extends StatelessWidget {

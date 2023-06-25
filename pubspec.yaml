@@ -3,15 +3,16 @@ name: "flutterapp"
 publish_to: "none"
 version: "1.0.0+1"
 dependencies:
+  mqtt_client: "^9.8.1"
   qr_code_scanner: "^1.0.1"
   cupertino_icons: "^1.0.5"
   path_drawing: "^1.0.0"
   flutter: 
     sdk: "flutter"
   url_launcher: "^6.1.11"
-  http: ^0.13.5
-  mailer: ^4.0.0
-  credit_card_input_form: ^2.3.0
+  http: "^0.13.5"
+  mailer: "^4.0.0"
+  credit_card_input_form: "^2.3.0"
   flutter_webview_plugin: ^0.4.0
 
 

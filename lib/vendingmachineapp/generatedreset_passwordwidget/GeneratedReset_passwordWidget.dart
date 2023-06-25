@@ -8,7 +8,6 @@ import 'package:flutterapp/vendingmachineapp/generatedreset_passwordwidget/gener
 class GeneratedReset_passwordWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var _email;
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 29, 53, 87),

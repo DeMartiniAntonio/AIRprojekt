@@ -1,12 +1,7 @@
-
-import 'package:credit_card_input_form/constants/constanst.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
-import 'package:credit_card_input_form/credit_card_input_form.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/PaymentFunctionality.dart';
-
-
 
 class GeneratedButton_OtherWidget extends StatelessWidget {
   @override

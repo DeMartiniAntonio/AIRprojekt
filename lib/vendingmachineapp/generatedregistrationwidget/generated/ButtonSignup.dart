@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -62,14 +61,22 @@ class ButtonSignup extends StatelessWidget {
 
             if(errorTest=="OK"){
               registerUser(firstName, lastName, email, password, roleId);
+              TextBoxFirstName.firstNameRegistration.clear();
+              TextBoxLastName.lastNameRegistration.clear();
+              TextBoxEmail.emailRegistration.clear();
+              TextBoxPasswordRegistration.passwordRegistration.clear();
+              TextBoxConfirmPassword.confirmPassword.clear();
+
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
 
                   title: Text('You are registered'),
+
                   actions: [
                     TextButton(
                       child: Text('Back to Sign Up'),
+
                       onPressed: () => Navigator.pushNamed(context, '/GeneratedLoginWidget'),
                     ),
                   ],
@@ -180,16 +187,9 @@ class ButtonSignup extends StatelessWidget {
           return "Password is too short!";
         }
 
-        if (password == confirmPassword) {
-          //passwordExist=testpassword(password);
-        }
-        else {
+        if (password != confirmPassword) {
           return "Passwords do not match!";
         }
-
-        /*if(passwordExist==true){
-        return "Password already exist!";
-      }*/
 
       return "OK";
 
