@@ -27,7 +27,7 @@ const Login = () => {
           if (res.status === 404) {
             setError("Username or password is invalid.");
           } else {
-            if (res.role_id === 2) {
+            if (res.role_id === 1) {
               localStorage.setItem("token", `user:${res.user_ID}`);
               localStorage.setItem("user", `${res.email}`);
               setIsLoggedIn(true);
