@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedButton_OtherWidget.dart';
-import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedButton_RevolutWidget.dart';
+import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/Button_OtherWidget.dart';
+import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/Button_RevolutWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedLabel_PaymentWidget.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 
@@ -47,7 +47,7 @@ class GeneratedPaymentWidget extends StatelessWidget {
                     x: 0.00,
                     y: -35.98,
                     z: 0,
-                    child: GeneratedButton_OtherWidget()),
+                    child: Button_OtherWidget()),
               ),
               Positioned(
                 left: 39.0,
@@ -60,7 +60,7 @@ class GeneratedPaymentWidget extends StatelessWidget {
                     x: 0.00,
                     y: -135.98,
                     z: 0,
-                    child: GeneratedButton_RevolutWidget()),
+                    child: Button_RevolutWidget()),
               ),
 
               Positioned(
