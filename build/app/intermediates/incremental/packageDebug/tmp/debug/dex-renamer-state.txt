@@ -1,4 +1,16 @@
-#Tue Jun 27 13:27:53 CEST 2023
-base.0=C\:\\Users\\Antonio\\Desktop\\New folder\\AIR - Final\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
+#Mon Jul 03 01:09:30 CEST 2023
+base.0=Y\:\\AIR2218\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=Y\:\\AIR2218\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=Y\:\\AIR2218\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=Y\:\\AIR2218\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=Y\:\\AIR2218\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.0=classes.dex
+path.1=0/classes.dex
+path.2=0/classes.dex
+path.3=13/classes.dex
+path.4=1/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex
+renamed.4=classes5.dex

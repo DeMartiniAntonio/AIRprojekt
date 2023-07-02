@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Antonio\\Desktop\\New folder\\AIR - Final\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
+            "outputFile": "Y:\\AIR2218\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Antonio\\.gradle\\caches\\transforms-3\\44762865316d618adc3a5e554aaa1708\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-id\\values-id.xml",
+                    "source": "C:\\Users\\Veronika\\.gradle\\caches\\transforms-3\\44762865316d618adc3a5e554aaa1708\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-id\\values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

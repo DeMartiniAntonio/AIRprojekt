@@ -8,13 +8,16 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutterapp/vendingmachineapp/Devices.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/EndOfPayment.dart';
 
+import '../../../RevolutPayment/RevolutPay.dart';
+
 class Button_RevolutWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-       onTap: () async{
-         startRevolutPayment(context);
-       },
+        onTap: () async{
+          var revolut = RevolutPay();
+          revolut.executePayment(context);
+        },
 
       child: Container(
       width: 312.0,
@@ -93,86 +96,4 @@ class Button_RevolutWidget extends StatelessWidget {
   }
 }
 
-Future<void> startRevolutPayment(BuildContext context) async {
-  final body= jsonEncode({
-    "amount": 5,
-    "merchant_order_ext_ref": "Order test",
-    "email": "test.customer@example.com",
-    "currency": "EUR"
-  });
-
-  final response =await http.post(Uri.parse('https://sandbox-merchant.revolut.com/api/1.0/orders'),
-      headers: {
-    'Authorization': 'Bearer sk_tRxDMwdEfNPy5m0Di-a6LYzcoL4uxMcYZY2Qm-7LU7K6GGgwPC-cHKIOK9nnVZ3n',
-    'Content-Type': 'application/json'
-      },
-
-      body: body,
-  );
-
-
-  if(response.statusCode==201){
-    Uri uri =Uri.parse(json.decode(response.body)['checkout_url']);
-    String order_id =json.decode(response.body)['id'];
-
-    TextEditingController uriController = TextEditingController(text: uri.toString());
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Copy URI in browser!'),
-          content: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              TextField(
-                controller: uriController,
-                readOnly: true,
-              ),
-              SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  Clipboard.setData(ClipboardData(text: uri.toString()));
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('URI copied to clipboard')),
-                  );
-                },
-                child: Text('Copy URI'),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-
-    bool paymentPending = true;
-    var order='https://sandbox-merchant.revolut.com/api/1.0/orders';
-
-    int counter=0;
-    while (paymentPending&&counter<=24) {
-
-      var paymentStatus = await http.get(Uri.parse('$order/$order_id'),
-        headers: {
-          'Authorization': 'Bearer sk_tRxDMwdEfNPy5m0Di-a6LYzcoL4uxMcYZY2Qm-7LU7K6GGgwPC-cHKIOK9nnVZ3n',
-          'Content-Type': 'application/json'
-        },
-      );
-
-      if (json.decode(paymentStatus.body)['state'] == "COMPLETED") {
-        paymentPending = false;
-        EndOfPayment().savingEvent();
-        EndOfPayment().updateDevice();
-        EndOfPayment().sendMqttSignal();
-        Devices.deleteDevice();
-        Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
-
-      } else {
-        await Future.delayed(Duration(seconds: 5));
-        counter=counter+1;
-      }
-
-    }
-
-  }
-}
 
