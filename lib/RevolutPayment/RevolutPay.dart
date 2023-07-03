@@ -3,26 +3,21 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutterapp/vendingmachineapp/Devices.dart';
 import 'package:flutterapp/IPayment/PaymentInterface.dart';
-import 'package:flutterapp/vendingmachineapp/User.dart';
-import 'package:intl/intl.dart';
-import 'package:mqtt_client/mqtt_client.dart';
-import 'package:mqtt_client/mqtt_server_client.dart';
 
 class RevolutPay implements PaymentInterface {
   String order_id = "";
-  String formattedDateTime = DateFormat('yyyy-MM-ddTHH:mm:ss').format(
-      DateTime.now());
 
   @override
-  executePayment(BuildContext context) async {
+  executePayment(BuildContext context, PaymentListener listener) async {
     final body = jsonEncode({
       "amount": 5,
       "merchant_order_ext_ref": "Order test",
       "email": "test.customer@example.com",
       "currency": "EUR"
     });
+
+    print("uso");
 
     final response = await http.post(
       Uri.parse('https://sandbox-merchant.revolut.com/api/1.0/orders'),
@@ -69,10 +64,10 @@ class RevolutPay implements PaymentInterface {
         },
       );
     }
-    isPaymentDone(context);
+    isPaymentDone(context, listener);
   }
-  @override
-  isPaymentDone(BuildContext context) async {
+
+  isPaymentDone(BuildContext context, PaymentListener listener) async {
     bool paymentPending = true;
     var order = 'https://sandbox-merchant.revolut.com/api/1.0/orders';
 
@@ -87,84 +82,17 @@ class RevolutPay implements PaymentInterface {
 
       if (json.decode(paymentStatus.body)['state'] == "COMPLETED") {
         paymentPending = false;
-        updateDevice(context);
-        savingEvent(context);
-        sendMqttSignal(context);
-        Devices.deleteDevice();
-        Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
+
+        listener.onSuccess(context);
       } else {
         await Future.delayed(Duration(seconds: 5));
         counter = counter + 1;
       }
     }
+    listener.onFailure(context);
   }
 
-  @override
-  Future<void> updateDevice(BuildContext context) async {
-    int stock = Devices.getScanedDevice()!.stock;
-    stock = stock - 1;
-    int idDevice = Devices.getScanedDevice()!.device_ID;
 
-    final body = jsonEncode({
-      "lat": Devices
-          .getScanedDevice()
-          ?.lat,
-      "long": Devices
-          .getScanedDevice()
-          ?.long,
-      "stock": stock,
-      "price": Devices
-          .getScanedDevice()
-          ?.price,
-      "active": Devices
-          .getScanedDevice()
-          ?.active,
-    });
-
-
-    await http.put(Uri.parse(
-        'https://air2218.mobilisis.hr/api/api/VendingMachine/UpdateDevice?id=$idDevice'),
-      headers: {'Content-Type': 'application/json'},
-      body: body,
-    );
-  }
-
-  @override
-  Future<http.Response> savingEvent(BuildContext context) async {
-    final body = jsonEncode({
-      "user_id": User
-          .getLoggedInUser()
-          ?.user_ID,
-      "device_id": Devices
-          .getScanedDevice()
-          ?.device_ID,
-      "date_time": formattedDateTime,
-    });
-
-    final response = await http.post(Uri.parse(
-        'https://air2218.mobilisis.hr/api/api/VendingMachine/AddEvent'),
-      headers: {'Content-Type': 'application/json'},
-      body: body,
-    );
-
-    return response;
-  }
-
-  MqttServerClient? client;
-  @override
-  sendMqttSignal(BuildContext context) async {
-    final client = MqttServerClient('test.mosquitto.org', 'AIR2218');
-    client.logging(on: true);
-
-    await client.connect(); // Connect to the broker
-    final builder = MqttClientPayloadBuilder();
-
-    builder.addString("1");
-    print("poslano");
-    client.publishMessage(
-        'AIR2218/vrata', MqttQos.exactlyOnce, builder.payload!);
-    client.disconnect();
-  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {

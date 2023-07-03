@@ -2,90 +2,15 @@ import 'dart:convert';
 import 'package:flutter/src/foundation/diagnostics.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/IPayment/PaymentInterface.dart';
-import 'package:mqtt_client/mqtt_client.dart';
-import 'package:mqtt_client/mqtt_server_client.dart';
 
-import '/vendingmachineapp/Devices.dart';
-import '/vendingmachineapp/User.dart';
 
 class StripePay implements PaymentInterface {
 
-  String formattedDateTime = DateFormat('yyyy-MM-ddTHH:mm:ss').format(
-      DateTime.now());
 
   @override
-  Future<http.Response> savingEvent(BuildContext context) async {
-    final body = jsonEncode({
-      "user_id": User
-          .getLoggedInUser()
-          ?.user_ID,
-      "device_id": Devices
-          .getScanedDevice()
-          ?.device_ID,
-      "date_time": formattedDateTime,
-    });
-
-    final response = await http.post(
-      Uri.parse('https://air2218.mobilisis.hr/api/api/VendingMachine/AddEvent'),
-      headers: {'Content-Type': 'application/json'},
-      body: body,
-    );
-
-    return response;
-  }
-
-  MqttServerClient? client;
-
-  @override
-  Future<void> sendMqttSignal(BuildContext context) async {
-    final client = MqttServerClient('test.mosquitto.org', 'AIR2218');
-    client.logging(on: true);
-
-    await client.connect(); // Connect to the broker
-    final builder = MqttClientPayloadBuilder();
-
-    builder.addString("1");
-    print("poslano");
-    client.publishMessage(
-        'AIR2218/vrata', MqttQos.exactlyOnce, builder.payload!);
-    client.disconnect();
-  }
-
-  @override
-  Future<void> updateDevice(BuildContext context) async {
-    int stock = Devices.getScanedDevice()!.stock;
-    stock = stock - 1;
-    int idDevice = Devices.getScanedDevice()!.device_ID;
-
-    final body = jsonEncode({
-      "lat": Devices
-          .getScanedDevice()
-          ?.lat,
-      "long": Devices
-          .getScanedDevice()
-          ?.long,
-      "stock": stock,
-      "price": Devices
-          .getScanedDevice()
-          ?.price,
-      "active": Devices
-          .getScanedDevice()
-          ?.active,
-    });
-
-
-    await http.put(Uri.parse(
-        'https://air2218.mobilisis.hr/api/api/VendingMachine/UpdateDevice?id=$idDevice'),
-      headers: {'Content-Type': 'application/json'},
-      body: body,
-    );
-  }
-
-  @override
-  Future<void> executePayment(BuildContext context) async {
+  Future<void> executePayment(BuildContext context, PaymentListener listener) async {
     Map<String, dynamic>? paymentIntent;
     Widget build(BuildContext context) {
       return Scaffold(
@@ -99,7 +24,7 @@ class StripePay implements PaymentInterface {
               TextButton(
                 child: const Text('Buy Now'),
                 onPressed: () async {
-                  await executePayment(context);
+                  await executePayment(context, listener);
                 },
               ),
             ],
@@ -108,7 +33,7 @@ class StripePay implements PaymentInterface {
       );
     }
     try {
-      paymentIntent = await createPaymentIntent('1000', 'EUR');
+      paymentIntent = await createPaymentIntent('500', 'EUR');
 
       await Stripe.instance
           .initPaymentSheet(
@@ -120,7 +45,7 @@ class StripePay implements PaymentInterface {
           ))
           .then((value) {});
 
-      isPaymentDone(context);
+      isPaymentDone(context, listener);
     } catch (err) {
       print(err);
     }
@@ -149,20 +74,16 @@ class StripePay implements PaymentInterface {
 
   }
 
-  @override
-  Future<void> isPaymentDone(BuildContext context) async {
+  Future<void> isPaymentDone(BuildContext context,PaymentListener listener ) async {
     try {
       await Stripe.instance.presentPaymentSheet().then((value) {
+        listener.onSuccess(context);
         print("Payment Successfull");
-        updateDevice(context);
-        savingEvent(context);
-        sendMqttSignal(context);
-        Devices.deleteDevice();
-        Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
       });
     } catch (e) {
+      listener.onFailure(context);
       print('$e');
-      await Future.delayed(Duration(seconds: 5));
+
     }
   }
 

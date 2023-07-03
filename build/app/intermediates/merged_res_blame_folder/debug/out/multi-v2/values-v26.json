@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "Y:\\AIR2218\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "C:\\Users\\josip\\Desktop\\AIR\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Veronika\\.gradle\\caches\\transforms-3\\bc727686095b3559511fee136fbad40d\\transformed\\appcompat-1.4.2\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\josip\\.gradle\\caches\\transforms-3\\d71dce9d49e2994554e6beb7bfd77d71\\transformed\\appcompat-1.5.1\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,130,217,431,657,896",
+                        "startOffsets": "55,130,217,381,557,796",
                         "endLines": "2,3,7,11,15,16",
                         "endColumns": "74,86,12,12,12,92",
-                        "endOffsets": "125,212,426,652,891,984"
+                        "endOffsets": "125,212,376,552,791,884"
                     }
                 }
             ]

@@ -1,22 +1,22 @@
-import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutterapp/vendingmachineapp/Devices.dart';
-import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/EndOfPayment.dart';
-
+import 'package:flutterapp/PaymentListeners/EndOfPayment.dart';
+import '../../../IPayment/PaymentInterface.dart';
 import '../../../RevolutPayment/RevolutPay.dart';
 
 class Button_RevolutWidget extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
         onTap: () async{
-          var revolut = RevolutPay();
-          revolut.executePayment(context);
+          EndOfPayment eop= new EndOfPayment();
+          PaymentInterface revolut = RevolutPay();
+          revolut.executePayment(context, eop);
         },
 
       child: Container(
@@ -95,5 +95,7 @@ class Button_RevolutWidget extends StatelessWidget {
     ));
   }
 }
+
+
 
 

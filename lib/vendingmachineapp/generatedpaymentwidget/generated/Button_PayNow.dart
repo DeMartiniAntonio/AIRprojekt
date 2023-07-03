@@ -1,15 +1,21 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/PaymentListeners/EndOfPayment.dart';
+import '../../../IPayment/PaymentInterface.dart';
+import '../../../ThirdModule/ThirdModule.dart';
 
 class Button_PayNow extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
-      onTap: () {
-        showDialog(
-          context: context,
-          builder: (_) => PaymentPopup(),
-        );
-      },
+        onTap: () async{
+          EndOfPayment eop= new EndOfPayment();
+          PaymentInterface payer = ThirdModule();
+          payer.executePayment(context, eop);
+        },
+
       child: Container(
         width: 200.0,
         height: 50.0,
@@ -34,54 +40,6 @@ class Button_PayNow extends StatelessWidget {
   }
 }
 
-class PaymentPopup extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text('Payment Confirmation'),
-      content: Text('Are you sure you want to continue payment?'),
-      actions: [
-        TextButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (_) => AlertDialog(
-                title: Text('Payment Cancelled'),
-                content: Text('Payment cancelled.'),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).popUntil((route) => route.isFirst);
-                    },
-                    child: Text('OK'),
-                  ),
-                ],
-              ),
-            );
-          },
-          child: Text('Cancel'),
-        ),
-        TextButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              builder: (_) => AlertDialog(
-                title: Text('Payment Successful'),
-                content: Text('Payment successful.'),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).popUntil((route) => route.isFirst);
-                    },
-                    child: Text('OK'),
-                  ),
-                ],
-              ),
-            );
-          },
-          child: Text('Continue'),
-        ),
-      ],
-    );
-  }
-}
+
+
+

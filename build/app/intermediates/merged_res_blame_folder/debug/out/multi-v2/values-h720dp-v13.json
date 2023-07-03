@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "Y:\\AIR2218\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "outputFile": "C:\\Users\\josip\\Desktop\\AIR\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Veronika\\.gradle\\caches\\transforms-3\\bc727686095b3559511fee136fbad40d\\transformed\\appcompat-1.4.2\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\josip\\.gradle\\caches\\transforms-3\\d71dce9d49e2994554e6beb7bfd77d71\\transformed\\appcompat-1.5.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
