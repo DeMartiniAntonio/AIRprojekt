@@ -3,11 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/PaymentFunctionality.dart';
 
+import '../../../StripePayment/StripePay.dart';
+
 class Button_OtherWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => PaymentFunctionality.Payment(context),
+        onTap: () async {
+          var payment = StripePay();
+          payment.executePayment(context);
+        },
 
 
       child: Container(
