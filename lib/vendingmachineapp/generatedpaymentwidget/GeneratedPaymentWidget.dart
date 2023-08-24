@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/Button_BraintreeWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/Button_OtherWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/Button_RevolutWidget.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/GeneratedLabel_PaymentWidget.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/vendingmachineapp/generatedpaymentwidget/generated/Button_PayNow.dart';
+
 
 
 /* Frame Payment
@@ -87,10 +89,11 @@ class GeneratedPaymentWidget extends StatelessWidget {
                 width: null,
                 height: 62.04999923706055,
                 child: TransformHelper.translate(
-                    x: 0.00,
-                    y: -59,
-                    z: 0,
-                    child: Text("BOK")),
+                  x: 0.0,
+                  y: 160,
+                  z: 0,
+                  child: Button_BraintreeWidget(),
+                ),
               ),
 
               Positioned(
