@@ -80,6 +80,20 @@ class GeneratedPaymentWidget extends StatelessWidget {
               ),
 
               Positioned(
+                left: 39.0,
+                top: null,
+                right: 39.0,
+                bottom: null,
+                width: null,
+                height: 62.04999923706055,
+                child: TransformHelper.translate(
+                    x: 0.00,
+                    y: -59,
+                    z: 0,
+                    child: Text("BOK")),
+              ),
+
+              Positioned(
                 left: null,
                 top: null,
                 right: null,
