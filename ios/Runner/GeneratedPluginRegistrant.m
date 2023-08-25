@@ -12,6 +12,12 @@
 @import credit_card_input_form;
 #endif
 
+#if __has_include(<flutter_braintree/FlutterBraintreePlugin.h>)
+#import <flutter_braintree/FlutterBraintreePlugin.h>
+#else
+@import flutter_braintree;
+#endif
+
 #if __has_include(<flutter_webview_plugin/FlutterWebviewPlugin.h>)
 #import <flutter_webview_plugin/FlutterWebviewPlugin.h>
 #else
@@ -40,6 +46,7 @@
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
   [CreditCardInputFormPlugin registerWithRegistrar:[registry registrarForPlugin:@"CreditCardInputFormPlugin"]];
+  [FlutterBraintreePlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterBraintreePlugin"]];
   [FlutterWebviewPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterWebviewPlugin"]];
   [FlutterQrPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterQrPlugin"]];
   [StripeIosPlugin registerWithRegistrar:[registry registrarForPlugin:@"StripeIosPlugin"]];

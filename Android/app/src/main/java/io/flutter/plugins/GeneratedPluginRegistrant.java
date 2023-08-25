@@ -23,6 +23,11 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin credit_card_input_form, com.origogi.credit_card_input_form.CreditCardInputFormPlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new com.example.flutter_braintree.FlutterBraintreePlugin());
+    } catch (Exception e) {
+      Log.e(TAG, "Error registering plugin flutter_braintree, com.example.flutter_braintree.FlutterBraintreePlugin", e);
+    }
+    try {
       com.flutter_webview_plugin.FlutterWebviewPlugin.registerWith(shimPluginRegistry.registrarFor("com.flutter_webview_plugin.FlutterWebviewPlugin"));
     } catch (Exception e) {
       Log.e(TAG, "Error registering plugin flutter_webview_plugin, com.flutter_webview_plugin.FlutterWebviewPlugin", e);
