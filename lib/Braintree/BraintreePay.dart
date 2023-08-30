@@ -8,7 +8,7 @@ class BraintreePay implements PaymentInterface {
     final cardRequest = BraintreeCreditCardRequest(
       cardNumber: '4111111111111111',
       expirationMonth: '12',
-      expirationYear: '2021',
+      expirationYear: '2023',
       cvv: '367',
     );
 
@@ -25,8 +25,10 @@ class BraintreePay implements PaymentInterface {
       paypalRequest,
     );
     if (paypalResult != null) {
+      listener.onSuccess(context);
       print('PayPal Nonce: ${paypalResult.nonce}');
     } else {
+      listener.onFailure(context);
       print('PayPal flow was canceled.');
     }
 

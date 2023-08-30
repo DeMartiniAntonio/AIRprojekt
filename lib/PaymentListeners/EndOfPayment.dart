@@ -79,7 +79,7 @@ class EndOfPayment implements PaymentListener{
     savingEvent();
     sendMqttSignal();
     Devices.deleteDevice();
-    Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
+    //Navigator.pushNamed(context, '/GeneratedQR_code_scanWidget');
   }
 }
 
