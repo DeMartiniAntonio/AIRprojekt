@@ -6,7 +6,7 @@ class BraintreePay implements PaymentInterface {
   @override
   Future<void> executePayment(BuildContext context, PaymentListener listener) async {
     final cardRequest = BraintreeCreditCardRequest(
-      cardNumber: '4111111111111111',
+      cardNumber: '4111111111111112',
       expirationMonth: '12',
       expirationYear: '2023',
       cvv: '367',
