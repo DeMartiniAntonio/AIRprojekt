@@ -6,7 +6,7 @@ import 'package:flutterapp/IPayment/PaymentInterface.dart';
 
 class ThirdModule implements PaymentInterface {
   @override
-  void executePayment(BuildContext context, PaymentListener listener) {
+  void executePayment(BuildContext context, PaymentListener listener, String amount) {
     showDialog(
       context: context,
       builder: (BuildContext context) {

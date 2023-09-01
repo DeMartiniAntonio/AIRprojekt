@@ -13,7 +13,7 @@ class Button_BraintreeWidget extends StatelessWidget {
       onTap: () async{
         EndOfPayment kraj= new EndOfPayment();
         PaymentInterface payer = BraintreePay();
-        payer.executePayment(context, kraj);
+        payer.executePayment(context, kraj, "50");
       },
 
       child: Container(

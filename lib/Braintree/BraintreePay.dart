@@ -10,7 +10,8 @@ class BraintreePay implements PaymentInterface {
   String nonce = "";
   String amount = "50";
   @override
-  Future<void> executePayment(BuildContext context, PaymentListener listener) async {
+  Future<void> executePayment(BuildContext context, PaymentListener listener, String amount) async {
+    this.amount=amount;
     final cardRequest = BraintreeCreditCardRequest(
       cardNumber: '4111111111111111',
       expirationMonth: '12',

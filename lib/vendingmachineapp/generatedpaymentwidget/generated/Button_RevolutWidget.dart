@@ -16,7 +16,7 @@ class Button_RevolutWidget extends StatelessWidget {
         onTap: () async{
           EndOfPayment eop= new EndOfPayment();
           PaymentInterface revolut = RevolutPay();
-          revolut.executePayment(context, eop);
+          revolut.executePayment(context, eop, "50");
         },
 
       child: Container(

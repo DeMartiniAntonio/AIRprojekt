@@ -13,7 +13,7 @@ class Button_PayNow extends StatelessWidget {
         onTap: () async{
           EndOfPayment eop= new EndOfPayment();
           PaymentInterface payer = ThirdModule();
-          payer.executePayment(context, eop);
+          payer.executePayment(context, eop, "50");
         },
 
       child: Container(

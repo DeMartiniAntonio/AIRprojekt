@@ -16,7 +16,7 @@ class Button_OtherWidget extends StatelessWidget {
         onTap: () async {
           EndOfPayment endof = new EndOfPayment();
           PaymentInterface payment = StripePay();
-          payment.executePayment(context, endof);
+          payment.executePayment(context, endof, "50");
         },
 
 

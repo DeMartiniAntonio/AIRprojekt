@@ -10,7 +10,7 @@ class StripePay implements PaymentInterface {
 
 
   @override
-  Future<void> executePayment(BuildContext context, PaymentListener listener) async {
+  Future<void> executePayment(BuildContext context, PaymentListener listener, String amount) async {
     Map<String, dynamic>? paymentIntent;
     Widget build(BuildContext context) {
       return Scaffold(
@@ -24,7 +24,7 @@ class StripePay implements PaymentInterface {
               TextButton(
                 child: const Text('Buy Now'),
                 onPressed: () async {
-                  await executePayment(context, listener);
+                  await executePayment(context, listener, amount);
                 },
               ),
             ],

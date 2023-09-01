@@ -9,7 +9,7 @@ class RevolutPay implements PaymentInterface {
   String order_id = "";
 
   @override
-  executePayment(BuildContext context, PaymentListener listener) async {
+  executePayment(BuildContext context, PaymentListener listener, String amount) async {
     final body = jsonEncode({
       "amount": 5,
       "merchant_order_ext_ref": "Order test",
