@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 class BraintreePay implements PaymentInterface {
   String nonce = "";
-  String amount = "50";
+  String amount = "20";
   @override
   Future<void> executePayment(BuildContext context, PaymentListener listener, String amount) async {
     this.amount=amount;
