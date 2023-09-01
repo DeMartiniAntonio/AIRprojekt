@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 class BraintreePay implements PaymentInterface {
   String nonce = "";
-  String amount = "5001.01";
+  String amount = "50";
   @override
   Future<void> executePayment(BuildContext context, PaymentListener listener) async {
     final cardRequest = BraintreeCreditCardRequest(
@@ -45,6 +45,14 @@ class BraintreePay implements PaymentInterface {
         print('Nonce: ${dropInResult.paymentMethodNonce.nonce}');
         nonce= dropInResult.paymentMethodNonce.nonce;
         // izvrši plaćanje
+        Fluttertoast.showToast(
+            msg: "Transakcija je uspješna!",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
         postNonceToServer(context,listener);
 
       }else {
@@ -69,25 +77,13 @@ class BraintreePay implements PaymentInterface {
       body: {'payment_method_nonce': nonce, 'amount': amount},
     );
 
-    Fluttertoast.showToast(
-        msg: response.statusCode.toString(),
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0);
-
     if (response.statusCode == 200) {
       // Successful response
       print('Payment successful');
 
-      // You can implement further actions here
-      listener.onSuccess(context);
     } else {
       // Error handling
       print('Payment failed');
-      // You can handle errors and take appropriate actions
       listener.onFailure(context);
     }
   }
