@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterapp/IPayment/PaymentInterface.dart';
 
+import '../PaymentListeners/EndOfPayment.dart';
+
 
 class ThirdModule implements PaymentInterface {
   @override
@@ -62,4 +64,37 @@ class ThirdModule implements PaymentInterface {
       },
     );
   }
+
+  Widget getPayButton (BuildContext context){
+    return GestureDetector(
+      onTap: () async{
+        EndOfPayment eop= new EndOfPayment();
+        PaymentInterface payer = ThirdModule();
+        payer.executePayment(context, eop, "50");
+      },
+
+
+      child: Container(
+        width: 350,
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 29, 53, 87),
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            'Pay now',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w700,
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
+

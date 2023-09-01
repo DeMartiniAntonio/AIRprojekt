@@ -1,16 +1,18 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/src/foundation/diagnostics.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutterapp/IPayment/PaymentInterface.dart';
 
+import '../PaymentListeners/EndOfPayment.dart';
+import '../helpers/transform/transform.dart';
 
 class StripePay implements PaymentInterface {
-
-
   @override
-  Future<void> executePayment(BuildContext context, PaymentListener listener, String amount) async {
+  Future<void> executePayment(
+      BuildContext context, PaymentListener listener, String amount) async {
     Map<String, dynamic>? paymentIntent;
     Widget build(BuildContext context) {
       return Scaffold(
@@ -32,14 +34,14 @@ class StripePay implements PaymentInterface {
         ),
       );
     }
+
     try {
       paymentIntent = await createPaymentIntent('500', 'EUR');
 
       await Stripe.instance
           .initPaymentSheet(
-          paymentSheetParameters: SetupPaymentSheetParameters(
-            paymentIntentClientSecret: paymentIntent![
-            'client_secret'],
+              paymentSheetParameters: SetupPaymentSheetParameters(
+            paymentIntentClientSecret: paymentIntent!['client_secret'],
             style: ThemeMode.light,
             merchantDisplayName: 'Test',
           ))
@@ -49,6 +51,36 @@ class StripePay implements PaymentInterface {
     } catch (err) {
       print(err);
     }
+  }
+
+  Widget getPayButton(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        EndOfPayment endof = new EndOfPayment();
+        PaymentInterface payment = StripePay();
+        payment.executePayment(context, endof, "50");
+      },
+      child: Container(
+        width: 350,
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 29, 53, 87),
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            'Stripe',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w700,
+              color: Color.fromARGB(255, 255, 255, 255),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   createPaymentIntent(String amount, String currency) async {
@@ -61,20 +93,20 @@ class StripePay implements PaymentInterface {
       var response = await http.post(
         Uri.parse('https://api.stripe.com/v1/payment_intents'),
         headers: {
-          'Authorization': 'Bearer sk_test_51NOKz4GAMBmTAYlA5udflpJ8TFyLoYZ1P6jZVDqIFo1tJ8QYI1mrCPNCck1Dlv8VU6yCZcEPdgoBtNfFoHel5LAT00QezbQE16',
+          'Authorization':
+              'Bearer sk_test_51NOKz4GAMBmTAYlA5udflpJ8TFyLoYZ1P6jZVDqIFo1tJ8QYI1mrCPNCck1Dlv8VU6yCZcEPdgoBtNfFoHel5LAT00QezbQE16',
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: body,
-
       );
       return json.decode(response.body);
     } catch (err) {
       throw Exception(err.toString());
     }
-
   }
 
-  Future<void> isPaymentDone(BuildContext context,PaymentListener listener ) async {
+  Future<void> isPaymentDone(
+      BuildContext context, PaymentListener listener) async {
     try {
       await Stripe.instance.presentPaymentSheet().then((value) {
         listener.onSuccess(context);
@@ -83,7 +115,6 @@ class StripePay implements PaymentInterface {
     } catch (e) {
       listener.onFailure(context);
       print('$e');
-
     }
   }
 
@@ -117,16 +148,17 @@ class StripePay implements PaymentInterface {
 
   @override
   String toStringDeep(
-      {String prefixLineOne = '', String? prefixOtherLines, DiagnosticLevel minLevel = DiagnosticLevel
-          .debug}) {
+      {String prefixLineOne = '',
+      String? prefixOtherLines,
+      DiagnosticLevel minLevel = DiagnosticLevel.debug}) {
     // TODO: implement toStringDeep
     throw UnimplementedError();
   }
 
   @override
   String toStringShallow(
-      {String joiner = ', ', DiagnosticLevel minLevel = DiagnosticLevel
-          .debug}) {
+      {String joiner = ', ',
+      DiagnosticLevel minLevel = DiagnosticLevel.debug}) {
     // TODO: implement toStringShallow
     throw UnimplementedError();
   }
@@ -147,5 +179,4 @@ class StripePay implements PaymentInterface {
     // TODO: implement build
     throw UnimplementedError();
   }
-
 }

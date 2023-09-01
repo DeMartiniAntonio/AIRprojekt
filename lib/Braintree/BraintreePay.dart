@@ -6,6 +6,8 @@ import 'package:flutterapp/IPayment/PaymentInterface.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 
+import '../PaymentListeners/EndOfPayment.dart';
+
 class BraintreePay implements PaymentInterface {
   String nonce = "";
   String amount = "20";
@@ -88,5 +90,36 @@ class BraintreePay implements PaymentInterface {
       listener.onFailure(context);
     }
   }
+
+   Widget getPayButton(BuildContext context){
+     return GestureDetector(
+       onTap: () async{
+         EndOfPayment kraj = new EndOfPayment();
+         PaymentInterface payer = BraintreePay();
+         payer.executePayment(context, kraj, "50");
+       },
+
+       child: Container(
+         width: 350,
+         decoration: BoxDecoration(
+           color: Color.fromARGB(255, 29, 53, 87),
+           borderRadius: BorderRadius.circular(30),
+         ),
+           child: Padding(
+             padding: const EdgeInsets.all(16.0),
+             child: Text(
+               'Braintree',
+               textAlign: TextAlign.center,
+               style: TextStyle(
+                 fontSize: 30,
+                 fontFamily: 'Inter',
+                 fontWeight: FontWeight.w700,
+                 color: Color.fromARGB(255, 255, 255, 255),
+               ),
+             ),
+           ),
+       ),
+     );
+   }
 }
 
